@@ -77,3 +77,7 @@ Este repositório será atualizado progressivamente conforme avanço na trilha.
 Cada módulo representará um incremento técnico estruturado.
 
 ---
+
+## 📚 Módulos Concluídos / Em Andamento
+
+- [Módulo 01 – Pipeline de Dados](docs/modulo_01_pipeline_dados.md)
