@@ -79,11 +79,11 @@ class Dados:
         # Assume que 'objetos' é uma lista ou iterável de objetos Dados
         combined_list = []
         for obj in objetos:
-            if hasattr(obj, 'dados') and isinstance(obj.dados, list):
+            if hasattr(obj, "dados") and isinstance(obj.dados, list):
                 combined_list.extend(obj.dados)
             else:
                 raise ValueError("Objetos devem ser instâncias de Dados com lista.")
-        return cls(combined_list, 'list')
+        return cls(combined_list, "list")
 
     def salvando_dados(self, path):
         dados_combinados_tabela = self.__transformando_dados_tabela()
