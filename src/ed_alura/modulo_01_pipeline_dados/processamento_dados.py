@@ -82,7 +82,7 @@ class Dados:
             if hasattr(obj, 'dados') and isinstance(obj.dados, list):
                 combined_list.extend(obj.dados)
             else:
-                raise ValueError("Todos os objetos devem ser instâncias de Dados com `dados` como lista.")
+                raise ValueError("Objetos devem ser instâncias de Dados com lista.")
         return cls(combined_list, 'list')
 
     def salvando_dados(self, path):
