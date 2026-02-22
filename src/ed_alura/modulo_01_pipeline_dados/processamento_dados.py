@@ -67,12 +67,23 @@ class Dados:
         self.dados = new_dados
         self.nome_colunas = self.__get_columns()
 
-    @staticmethod
-    def join(dadosA, dadosB):
+    # @staticmethod
+    # def join(dadosA, dadosB):
+    #     combined_list = []
+    #     combined_list.extend(dadosA.dados)
+    #     combined_list.extend(dadosB.dados)
+    #     return Dados(combined_list, "list")
+
+    @classmethod
+    def join(cls, objetos):
+        # Assume que 'objetos' é uma lista ou iterável de objetos Dados
         combined_list = []
-        combined_list.extend(dadosA.dados)
-        combined_list.extend(dadosB.dados)
-        return Dados(combined_list, "list")
+        for obj in objetos:
+            if hasattr(obj, 'dados') and isinstance(obj.dados, list):
+                combined_list.extend(obj.dados)
+            else:
+                raise ValueError("Todos os objetos devem ser instâncias de Dados com 'dados' como lista.")
+        return cls(combined_list, 'list')
 
     def salvando_dados(self, path):
         dados_combinados_tabela = self.__transformando_dados_tabela()

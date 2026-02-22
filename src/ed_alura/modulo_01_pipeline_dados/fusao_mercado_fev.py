@@ -36,7 +36,12 @@ dados_empresaB.rename_columns(key_mapping)
 print(f"Colunas da empresa B após renomeação: {dados_empresaB.nome_colunas}")
 print()
 
-dados_fusao = Dados.join(dados_empresaA, dados_empresaB)
+# # @staticmethod
+# dados_fusao = Dados.join(dados_empresaA, dados_empresaB)
+
+# @classmethod
+dados_fusao = Dados.join([dados_empresaA, dados_empresaB])
+
 print(f"Colunas dados fusão: {dados_fusao.nome_colunas}")
 print(f"Tamanho dados fusão: {dados_fusao.qtd_linhas}")
 print()
